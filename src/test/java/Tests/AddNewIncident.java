@@ -14,10 +14,18 @@ import framework.Verify;
 @Listeners(framework.TestMethodListener.class)
 public class AddNewIncident extends SeleniumWebTests {
 
-	@Test
-	public void AddingNewIncident() throws InterruptedException {
+	@Test(description="a) Login to ServiceNow (manual if Captcha, but at least the username/password should be entered and the login button clicked)\r\n" + 
+			"b) Search for \"Incident\" in the \"Filter navigator\" on the left side panel\r\n" + 
+			"c) Click \"Incident -> Create New\"\r\n" + 
+			"d) On the right side, a form will come up, enter the mandatory fields\r\n" + 
+			"i) Caller: Click on the search button (magnifying lens next to text box). Select \"Aileen Mottern\" from the new popup.\r\n" + 
+			"ii) Short Description: Enter in text box - \"This is a Test\"\r\n" + 
+			"e) On the top bar (green colour), right click and click on \"Save\"\r\n" + 
+			"f) Change the 'Short Description' text box to \"This is a Test - Part A\"\r\n" + 
+			"g) Click on \"Update\" button on the top bar (green colour)"
+			+ "h) Verify if the ticket is visible in the list")
+	public void AddNewIncident_verifyifnewticketnumberisvisbleinthelist() throws InterruptedException {
 		
-		//Thread.sleep(10000);
 		List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
 		System.out.println("iframes sizes are"+iframes.size());
 		driver.switchTo().frame(0);
@@ -35,20 +43,16 @@ public class AddNewIncident extends SeleniumWebTests {
 		elelist.get(0).click();
 		Thread.sleep(1500);
 		driver.switchTo().frame(0);
-		//driver.findElement(By.xpath("//*[@id='sys_display.incident.caller_id']")).clear();
-		//driver.findElement(By.xpath("//*[@id='sys_display.incident.caller_id']")).sendKeys("Aileen Mottern");
 		Thread.sleep(5000);
+		String incNumber = driver.findElement(By.xpath("//*[@id=\"incident.number\"]")).getAttribute("value");
+		System.out.println("Incident number is:"+incNumber);
 		driver.findElement(By.xpath("//button[@id='lookup.incident.caller_id']")).click();
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(newTab.get(1));
-		Thread.sleep(5000);
+		Thread.sleep(2500);
 		driver.findElement(By.xpath("//a[text()='Aileen Mottern']")).click();
-		Thread.sleep(5000);
-		//driver.switchTo().window(driver.getWindowHandle());
-		//driver.close();
-		//Thread.sleep(5000);
+		Thread.sleep(2500);
 		System.out.println(driver.getWindowHandles());
-		//driver.navigate().refresh();
 		ArrayList<String> newTab1 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(newTab1.get(0));
 		Thread.sleep(1500);
@@ -64,6 +68,7 @@ public class AddNewIncident extends SeleniumWebTests {
 		driver.findElement(By.xpath("//*[@id='incident.short_description']")).sendKeys("This is a Test Part A");
 		driver.findElement(By.xpath("//*[@id='sysverb_update']")).click();
 		Thread.sleep(2000);
+		Verify.verifyEquals(driver.findElement(By.xpath("//a[text()='"+incNumber+"']")).isDisplayed(), true, "adding new incident failed");
 		
 	}
 	
