@@ -28,13 +28,13 @@ public class AddNewIncident extends SeleniumWebTests {
 		Thread.sleep(5500);
 		List<WebElement> iframes1 = driver.findElements(By.tagName("iframe"));
 		System.out.println("iframes sizes are"+iframes1.size());
-		driver.findElement(By.cssSelector("#filter")).sendKeys("Incidents");
+		driver.findElement(By.cssSelector("#filter")).sendKeys("Incident");
 		Thread.sleep(2500);
-		List<WebElement>elelist = driver.findElements(By.xpath("//div[@class='sn-widget-list-title']"));
-		elelist.get(8).click();
+		List<WebElement>elelist = driver.findElements(By.xpath("//div[text()='Create New']"));
+		elelist.get(0).click();
 		Thread.sleep(1500);
 		driver.switchTo().frame(0);
-		driver.findElement(By.xpath("//*[@id='sysverb_new']")).click();
+		//driver.findElement(By.xpath("//*[@id='sysverb_new']")).click();
 		driver.findElement(By.xpath("//*[@id='sys_display.incident.caller_id']")).clear();
 		driver.findElement(By.xpath("//*[@id='sys_display.incident.caller_id']")).sendKeys("Aileen Mottern");
 		Thread.sleep(1500);

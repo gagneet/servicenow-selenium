@@ -27,7 +27,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SeleniumWebTests{
 	
     WebDriver driver;
-    String srvcNOWURL = "https://dev99719.service-now.com/";
+    String srvcNOWURL = "https://dev64811.service-now.com/";
 	
 	@BeforeMethod
 	
