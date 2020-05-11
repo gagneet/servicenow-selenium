@@ -9,8 +9,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import Framework.Verify;
-@Listeners(Framework.TestMethodListener.class)
+import framework.Verify;
+@Listeners(framework.TestMethodListener.class)
 public class AddNewIncident extends SeleniumWebTests {
 
 	@Test

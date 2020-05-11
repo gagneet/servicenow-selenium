@@ -1,4 +1,4 @@
-package Miscellaneous;
+package thirdParty;
 
 import java.util.Random;
 import java.util.stream.Collectors;
