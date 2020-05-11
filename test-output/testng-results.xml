@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="70111" started-at="2020-05-11T05:18:17Z" finished-at="2020-05-11T05:19:27Z">
+  <suite name="Default suite" duration-ms="59703" started-at="2020-05-11T05:58:40Z" finished-at="2020-05-11T05:59:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="70111" started-at="2020-05-11T05:18:17Z" finished-at="2020-05-11T05:19:27Z">
+    <test name="Default test" duration-ms="59703" started-at="2020-05-11T05:58:40Z" finished-at="2020-05-11T05:59:39Z">
       <class name="Tests.AddNewIncident">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Tests.AddNewIncident@6e1567f1]" name="setUp" is-config="true" duration-ms="18406" started-at="2020-05-11T05:18:17Z" finished-at="2020-05-11T05:18:35Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Tests.AddNewIncident@6e1567f1]" name="setUp" is-config="true" duration-ms="17663" started-at="2020-05-11T05:58:40Z" finished-at="2020-05-11T05:58:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="AddingNewIncident()[pri:0, instance:Tests.AddNewIncident@6e1567f1]" name="AddingNewIncident" duration-ms="51681" started-at="2020-05-11T05:18:35Z" finished-at="2020-05-11T05:19:27Z">
+        <test-method status="PASS" signature="AddingNewIncident()[pri:0, instance:Tests.AddNewIncident@6e1567f1]" name="AddingNewIncident" duration-ms="42016" started-at="2020-05-11T05:58:57Z" finished-at="2020-05-11T05:59:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddingNewIncident -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:Tests.AddNewIncident@6e1567f1]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-05-11T05:19:27Z" finished-at="2020-05-11T05:19:27Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Tests.AddNewIncident@6e1567f1]" name="afterTest" is-config="true" duration-ms="1" started-at="2020-05-11T05:59:39Z" finished-at="2020-05-11T05:59:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
