@@ -42,7 +42,7 @@ public class SeleniumWebTests{
 
 	@AfterMethod
     public void afterTest() throws IOException  {
-		driver.quit();
+		//driver.quit();
 	}
     
     
