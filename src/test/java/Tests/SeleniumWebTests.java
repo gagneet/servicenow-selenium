@@ -27,7 +27,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SeleniumWebTests{
 	
     WebDriver driver;
-    String srvcNOWURL = "https://dev64811.service-now.com/";
 	
 	@BeforeMethod
 	
@@ -37,12 +36,12 @@ public class SeleniumWebTests{
 		    driver = new ChromeDriver();
 		    driver.manage().window().maximize();
 		    driver.manage().deleteAllCookies();
-		    driver.get(srvcNOWURL);
+		    driver.get(System.getProperty("url"));
 	  }
 
 	@AfterMethod
     public void afterTest() throws IOException  {
-		//driver.quit();
+		driver.quit();
 	}
     
     
