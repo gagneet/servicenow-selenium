@@ -36,6 +36,7 @@ public class SeleniumWebTests{
 		    driver = new ChromeDriver();
 		    driver.manage().window().maximize();
 		    driver.manage().deleteAllCookies();
+		    //url will be taken via CLI
 		    driver.get(System.getProperty("url"));
 	  }
 
